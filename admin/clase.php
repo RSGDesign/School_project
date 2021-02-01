@@ -177,7 +177,11 @@ while($rows=mysqli_fetch_array($result)){
                                          echo "<tr>";
                                          echo "<td>"; echo $row_list['clasa'];  echo "</td>";
                                         
+<<<<<<< HEAD
                                          echo "<td>"; ?><a href="delete_clasa.php?nume=<?php echo $row_list['nume']; ?>"><i style="color:#007bff;"class="fa fa-close"></i></a><?php  echo "</td>";                       
+=======
+                                         echo "<td>"; ?><a href="delete_clasa.php?clasa=<?php echo $row_list['clasa']; ?>"><i style="color:#007bff;"class="fa fa-close"></i></a><?php  echo "</td>";                       
+>>>>>>> Sebastian
                                          echo" </tr>";   
                                            
                                           }  
