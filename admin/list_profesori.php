@@ -12,7 +12,6 @@
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="js/bootstrap.bundle.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Lista profesori</title>
 
     <?php
@@ -26,7 +25,8 @@ while($rows=mysqli_fetch_array($result)){
 ?>
 
 
-
+    <!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -45,8 +45,8 @@ while($rows=mysqli_fetch_array($result)){
       }
     </style>
     <!-- Custom styles for this template -->
-   <link href="../signup.css" rel="stylesheet">
-	<link href="../navbar.css" rel="stylesheet">
+   <link href="signup.css" rel="stylesheet">
+	<link href="navbar.css" rel="stylesheet">
   </head>
   <body class="text-center">
   <div>
@@ -158,7 +158,11 @@ while($rows=mysqli_fetch_array($result)){
                                          echo "<td>"; echo $row_list['prenume'];  echo "</td>";
                                          echo "<td>"; echo $row_list['email'];  echo "</td>";
                                          echo "<td>"; echo $row_list['materie'];  echo "</td>";
-                                         echo "<td>"; ?><a alt="Sterge"href="delete.php?id=<?php echo $data['id']; ?>"><i style="color:#007bff;"class="fa fa-close"></i></a><?php  echo "</td>";                       
+<<<<<<< Updated upstream
+                                                                
+=======
+                                         echo "<td>"; ?><a href="delete.php?nume=<?php echo $row_list['nume']; ?>"><i style="color:#007bff;"class="fa fa-close"></i></a><?php  echo "</td>";                       
+>>>>>>> Stashed changes
                                          echo" </tr>";   
                                            
                                           }  

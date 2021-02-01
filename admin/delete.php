@@ -2,13 +2,18 @@
 include("../db.php");
 // sql to delete a record
 
-$sql = "DELETE FROM profesori WHERE nume=$select";
+$nume = $_GET['nume']; // get id through query string
 
-if ($con->query($sql) === TRUE) {
-  echo "Record deleted successfully";
-} else {
-  echo "Error deleting record: " . $con->error;
+$del = mysqli_query($con,"delete from profesori where nume = '$nume'"); // delete query
+
+if($del)
+{
+    mysqli_close($con); // Close connection
+    header("location:list_profesori.php"); // redirects to all records page
+    exit;	
 }
-
-$con->close();
+else
+{
+    echo "Error deleting record"; // display error message if not delete
+}
 ?>
