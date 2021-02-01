@@ -1,4 +1,14 @@
 
+<?php
+session_start();
+if(isset($_SESSION['email'])  )
+
+{
+  header("Location:admin.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

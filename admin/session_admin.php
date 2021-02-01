@@ -17,7 +17,7 @@
  $loggedin_id=$row['id'];
  if(!isset($loggedin_session) || $loggedin_session==NULL) {
      echo "Go back";
-     header("Location: administrator.php");
+     header("Location: login_admin.php");
     }
  }
 ?>
