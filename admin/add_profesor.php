@@ -148,16 +148,16 @@ while($rows=mysqli_fetch_array($result)){
                     <div class="col-md-12">
                       <h4 class="mb-0">Adauga profesor</h4>
                       <br>
-                      <form method="post" id="framework_form">
-                            <input type="text" class="form-control" placeholder="Nume" name="nume" value="">
+                      <form method="post" id="framework_form" >
+                            <input type="text" class="form-control" placeholder="Nume" name="nume" value=""required>
                             <br>
-                            <input type="text" class="form-control" placeholder="Prenume" name="prenume" value="">
+                            <input type="text" class="form-control" placeholder="Prenume" name="prenume" value=""required>
                             <br>
-                            <input type="text" class="form-control" placeholder="Email" name="email" value="">
+                            <input type="text" class="form-control" placeholder="Email" name="email" value=""required>
                             <br>
                             <div class="form-group">
                             
-                            <select id="materie" name="materie[]" multiple class="form-control" >
+                            <select id="materie" name="materie[]" multiple class="form-control" required>
                                         <?php  
                                           
                                           include('db.php');
@@ -176,7 +176,7 @@ while($rows=mysqli_fetch_array($result)){
                             </select>
                             </div>
                             <br>
-                            <input type="password" class="form-control" placeholder="Parola" name="parola" value="">
+                            <input type="password" class="form-control" placeholder="Parola" name="parola" value=""required>
                             <br>
                             <div class="form-group">
                             <input type="submit" class="btn btn-primary" name="submit" value="Submit" />
@@ -202,7 +202,8 @@ while($rows=mysqli_fetch_array($result)){
 <script>
 $(document).ready(function(){
  $('#materie').multiselect({
-  nonSelectedText: 'Selecteaza materii predate',
+
+  nonSelectedText: 'Selecteaza clasa',
   enableFiltering: true,
   enableCaseInsensitiveFiltering: true,
   buttonWidth:'400px'
@@ -212,7 +213,7 @@ $(document).ready(function(){
   event.preventDefault();
   var form_data = $(this).serialize();
   $.ajax({
-   url:"insert.php",
+   url:"insert_prof.php",
    method:"POST",
    data:form_data,
    success:function(data)
