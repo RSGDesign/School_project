@@ -115,7 +115,7 @@ while($rows=mysqli_fetch_array($result)){
 ?>
               <div class="card mt-3">
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item d-flex justify-content-between align-items-center ">
+                <li class="list-group-item d-flex justify-content-between align-items-center ">
                     <a class="link" href="add_profesor.php"><b>Adauga profesor</b></a>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
@@ -125,15 +125,17 @@ while($rows=mysqli_fetch_array($result)){
                     <a class="link" href="add_admin.php"><b>Adauga Administrator</b></a>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <a class="link" href="add_admin.php"><b>Adauga/Modifica/Sterge/vizualizare clase</b></a>
+                    <a class="link" href="clase.php"><b>Adauga/Modifica/Sterge/vizualizare clase</b></a>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <a class="link" href="add_admin.php"><b>Lista profesori</b></a>
+                    <a class="link" href="materii.php"><b>Adauga/Modifica/Sterge/vizualizare materii</b></a>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <a class="link" href="add_admin.php"><b>Lista elevi</b></a>
+                    <a class="link" href="list_profesori.php"><b>Lista profesori</b></a>
                   </li>
-                  
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <a class="link" href="list_elevi.php"><b>Lista elevi</b></a>
+                  </li>
                 </ul>
               </div>
             </div>
