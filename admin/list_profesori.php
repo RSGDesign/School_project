@@ -5,19 +5,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-      
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>  
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
- 
-      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../js/bootstrap.bundle.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
-    <title>Adauga profesor</title>
+<link href="../css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="js/bootstrap.bundle.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Lista profesori</title>
 
     <?php
       $sql="SELECT * FROM admin where id=$loggedin_id";
@@ -31,7 +26,7 @@ while($rows=mysqli_fetch_array($result)){
 
 
     <!-- Bootstrap core CSS -->
-<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -50,8 +45,8 @@ while($rows=mysqli_fetch_array($result)){
       }
     </style>
     <!-- Custom styles for this template -->
-   <link href="../signup.css" rel="stylesheet">
-	<link href="../navbar.css" rel="stylesheet">
+   <link href="signup.css" rel="stylesheet">
+	<link href="navbar.css" rel="stylesheet">
   </head>
   <body class="text-center">
   <div>
@@ -110,11 +105,8 @@ while($rows=mysqli_fetch_array($result)){
                   </div>
                 </div>
               </div>
-              <?php
-}
-?>
               <div class="card mt-3">
-              <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush">
                   <li class="list-group-item d-flex justify-content-between align-items-center ">
                     <a class="link" href="add_profesor.php"><b>Adauga profesor</b></a>
                   </li>
@@ -141,91 +133,53 @@ while($rows=mysqli_fetch_array($result)){
               </div>
             </div>
             <div class="col-md-8">
-            <div class="card mb-3">
-                <div class="card-body">
-                  
-                    <div class="row">
-                    <div class="col-md-12">
-                      <h4 class="mb-0">Adauga profesor</h4>
-                      <br>
-                      <form method="post" id="framework_form">
-                            <input type="text" class="form-control" placeholder="Nume" name="nume" value="">
-                            <br>
-                            <input type="text" class="form-control" placeholder="Prenume" name="prenume" value="">
-                            <br>
-                            <input type="text" class="form-control" placeholder="Email" name="email" value="">
-                            <br>
-                            <div class="form-group">
-                            
-                            <select id="materie" name="materie[]" multiple class="form-control" >
-                                        <?php  
+              <div class="card mb-3">
+                <table>
+                <tr>
+                <th>Nume</th>
+                <th>Prenume</th>
+                <th>Email</th>
+                <th>Materii predate</th>
+                <th>Optiuni</th>
+                </tr>
+                
+                
+                <?php  
                                           
-                                          include('db.php');
-                                          $select="materii";
+                                          include('../db.php');
+                                          $select="nume";
                                         ?>  
                                       <?php  
-                                          $list=mysqli_query($con,"select * from materii order by id asc");  
+                                          $list=mysqli_query($con,"select * from profesori order by id asc");  
                                       while($row_list=mysqli_fetch_assoc($list)){  
-                                          ?>  
-                                              <option value="<?php echo $row_list['materie']; ?>"<?php if($row_list['materie']==$select){ echo "selected"; } ?> >  
-                                                                  <?php echo $row_list['materie'];?>  
-                                              </option>  
-                                          <?php  
+                                           
+                                         echo "<tr>";
+                                         echo "<td>"; echo $row_list['nume'];  echo "</td>";
+                                         echo "<td>"; echo $row_list['prenume'];  echo "</td>";
+                                         echo "<td>"; echo $row_list['email'];  echo "</td>";
+                                         echo "<td>"; echo $row_list['materie'];  echo "</td>";
+                                                                
+                                         echo" </tr>";   
+                                           
                                           }  
-                                          ?>  
-                            </select>
-                            </div>
-                            <br>
-                            <input type="password" class="form-control" placeholder="Parola" name="parola" value="">
-                            <br>
-                            <div class="form-group">
-                            <input type="submit" class="btn btn-primary" name="submit" value="Submit" />
-                            </div>
-                        </form>
-                    </div>
-                    </div>
-                </div>
+                                          ?> 
+                
+                
+                </table>
             </div>
               </div>
-              
-            </div>
-          </div>
-        </div>
+             
     </div>
-
-
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	
+</script>
+<?php
+}
+?>
 			
 
 </body>
 
 </html>
-<script>
-$(document).ready(function(){
- $('#materie').multiselect({
-  nonSelectedText: 'Selecteaza materii predate',
-  enableFiltering: true,
-  enableCaseInsensitiveFiltering: true,
-  buttonWidth:'400px'
- });
- 
- $('#framework_form').on('submit', function(event){
-  event.preventDefault();
-  var form_data = $(this).serialize();
-  $.ajax({
-   url:"insert.php",
-   method:"POST",
-   data:form_data,
-   success:function(data)
-   {
-    $('#materie option:selected').each(function(){
-     $(this).prop('selected', false);
-    });
-    $('#materie').multiselect('refresh');
-    alert(data);
-   }
-  });
- });
- 
- 
-});
-</script>
