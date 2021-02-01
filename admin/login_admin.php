@@ -1,4 +1,14 @@
 
+<?php
+session_start();
+if(isset($_SESSION['email'])  )
+
+{
+  header("Location:admin.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -72,10 +82,11 @@ echo ' <div id="reg-head-fail" class="headrg">Registration Failed! <br> Error: '
                                 <div class="row register-form">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Adresa de email *" name="email" value="" />
+                                            <input type="email" class="form-control" placeholder="Adresa de email *" name="email" value="" required>
                                         </div>
+                                       
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Parola *" name="parola" value="" />
+                                            <input type="password" class="form-control" placeholder="Parola *" name="parola" value="" required>
                                         </div>
                                         <input type="submit" class="btnRegister" name="signin" value="Logheaza-te"/>
                                     </div>

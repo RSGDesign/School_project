@@ -15,7 +15,7 @@
 <script src="../js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Clase</title>
+        <title>Clase</title>
 
     <?php
       $sql="SELECT * FROM admin where id=$loggedin_id";
@@ -146,7 +146,7 @@ while($rows=mysqli_fetch_array($result)){
                     <div class="col-md-12">
                       <h4 class="mb-0">Adauga clasa</h4>
                       <br>
-                      <form method="post" action="insert_clasa.php">
+            <form method="post" action="insert_clasa.php">
                             <input type="text" class="form-control" placeholder="Clasa" name="clasa" value="">
                             <br>
                             
@@ -196,15 +196,14 @@ while($rows=mysqli_fetch_array($result)){
         </div>
     </div>
 
-    <?php
+<?php
    if(isset($_GET['info']) && $_GET['info'] == 'clasaadaugata'){
 
 
   echo'<script>  alert("Clasa creata cu succes!")</script>'; 
 
 }
-?>
-			
+?>		
 
 </body>
 

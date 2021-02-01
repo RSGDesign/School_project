@@ -17,7 +17,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
-    <title>Adauga profesor</title>
+    <title>Adauga Admin</title>
 
     <?php
       $sql="SELECT * FROM admin where id=$loggedin_id";
@@ -150,11 +150,14 @@ while($rows=mysqli_fetch_array($result)){
                             <br>
                             <input type="text" class="form-control" placeholder="Prenume" name="prenume" value=""required>
                             <br>
-                            <input type="text" class="form-control" placeholder="Email" name="email" value=""required>
+                            
+                            <input type="email" class="form-control" placeholder="Email" name="email" value=""required>
                             <br>
                            
                            
-                            <input type="password" class="form-control" placeholder="Parola" name="parola" value=""required>
+                            <input type="password" class="form-control" id="parola"placeholder="Parola" name="parola" value=""
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Trebuie sa contina cel putin 8 caractere, un  caracter special si o litera majuscula" required>
+                            
                             <br>
                             
                            
@@ -165,10 +168,11 @@ while($rows=mysqli_fetch_array($result)){
                     </div>
                     </div>
                 </div>
-            </div>
+            </div>     
+    
               </div>
-              
-            </div>
+             
+
           </div>
         </div>
     </div>
@@ -183,7 +187,14 @@ while($rows=mysqli_fetch_array($result)){
 
 }
 ?>
+    <?php
+   if(isset($_GET['info']) && $_GET['info'] == 'uexistent'){
 
+
+  echo'<script>  alert("Te rugam sa alegi alt username, acesta este deja folosit!")</script>'; 
+
+}
+?>
 
 
 
