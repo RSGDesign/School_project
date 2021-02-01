@@ -194,10 +194,10 @@ while($rows=mysqli_fetch_array($result)){
 }
 ?>
     <?php
-   if(isset($_GET['info']) && $_GET['info'] == 'uexistent'){
+   if(isset($_GET['info']) && $_GET['info'] == 'existent'){
 
 
-  echo'<script>  alert("Te rugam sa alegi alt username, acesta este deja folosit!")</script>'; 
+  echo'<script>  alert("Acest email corespunde altui admin!")</script>'; 
 
 }
 ?>
