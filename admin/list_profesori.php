@@ -158,7 +158,11 @@ while($rows=mysqli_fetch_array($result)){
                                          echo "<td>"; echo $row_list['prenume'];  echo "</td>";
                                          echo "<td>"; echo $row_list['email'];  echo "</td>";
                                          echo "<td>"; echo $row_list['materie'];  echo "</td>";
+<<<<<<< Updated upstream
                                                                 
+=======
+                                         echo "<td>"; ?><a href="delete.php?nume=<?php echo $row_list['nume']; ?>"><i style="color:#007bff;"class="fa fa-close"></i></a><?php  echo "</td>";                       
+>>>>>>> Stashed changes
                                          echo" </tr>";   
                                            
                                           }  
