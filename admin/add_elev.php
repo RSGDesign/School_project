@@ -17,7 +17,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
-    <title>Adauga profesor</title>
+    <title>Adauga Elev</title>
 
     <?php
       $sql="SELECT * FROM admin where id=$loggedin_id";
@@ -172,7 +172,8 @@ while($rows=mysqli_fetch_array($result)){
                                         </select>
                             <br>
                      
-                            <input type="password" class="form-control" placeholder="Parola" name="parola" value=""required>
+                            <input type="password" class="form-control" id="parola"placeholder="Parola" name="parola" 
+                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Trebuie sa contina cel putin 8 caractere, un  caracter special si o litera majuscula"value=""required>
                             <br>
                             <div class="form-group">
                             <input type="submit" class="btn btn-primary" name="submit" value="Submit" />
@@ -181,7 +182,8 @@ while($rows=mysqli_fetch_array($result)){
                     </div>
                     </div>
                 </div>
-            </div>
+            </div>      
+
               </div>
               
             </div>

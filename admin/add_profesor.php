@@ -173,16 +173,20 @@ while($rows=mysqli_fetch_array($result)){
                             </select>
                             </div>
                             <br>
-                            <input type="password" class="form-control" placeholder="Parola" name="parola" value=""required>
+                            <input type="password" class="form-control" id="parola"placeholder="Parola" name="parola" 
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Trebuie sa contina cel putin 8 caractere, un  caracter special si o litera majuscula"value=""required>
                             <br>
                             <div class="form-group">
                             <input type="submit" class="btn btn-primary" name="submit" value="Submit" />
                             </div>
                         </form>
+                        
                     </div>
                     </div>
                 </div>
             </div>
+            
+
               </div>
               
             </div>
@@ -192,15 +196,11 @@ while($rows=mysqli_fetch_array($result)){
 
 
 			
-
-</body>
-
-</html>
 <script>
 $(document).ready(function(){
  $('#materie').multiselect({
 
-  nonSelectedText: 'Selecteaza clasa',
+  nonSelectedText: 'Selecteaza materia',
   enableFiltering: true,
   enableCaseInsensitiveFiltering: true,
   buttonWidth:'400px'
@@ -227,3 +227,7 @@ $(document).ready(function(){
  
 });
 </script>
+</body>
+
+</html>
+
