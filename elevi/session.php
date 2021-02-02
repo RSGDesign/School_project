@@ -19,6 +19,6 @@ $loggedin_session=$row['email'];
 $loggedin_id=$row['id'];
 if(!isset($loggedin_session) || $loggedin_session==NULL) {
     echo "Go back";
-    header("Location: login.php");
+    header("Location: ../login.php");
    }
 }

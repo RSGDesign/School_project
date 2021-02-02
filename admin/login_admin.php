@@ -7,7 +7,40 @@ if(isset($_SESSION['email'])  )
   header("Location:admin.php");
 }
 
+
 ?>
+
+
+<?php
+
+
+include('../db.php');
+
+if(isset($_SESSION['email'])  )
+
+{
+$sql="SELECT email FROM elevi WHERE email='" . $_SESSION['email'] . "' ";
+$result=mysqli_query($con,$sql);
+$row=mysqli_fetch_array($result);
+$count=mysqli_num_rows($result);
+$sql1="SELECT email FROM profesori WHERE email='" . $_SESSION['email'] . "' ";
+$result1=mysqli_query($con,$sql1);
+$row1=mysqli_fetch_array($result1);
+$count1=mysqli_num_rows($result1);
+if($count == 1) {
+ echo $count;
+ header("Location:../elevi/elev.php");
+}else if($count1 == 1){
+    echo $count1;
+    header("Location:../profesori/profesor.php");
+}
+
+}
+
+
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
