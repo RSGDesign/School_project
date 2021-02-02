@@ -119,14 +119,9 @@ echo ' <div id="reg-head-fail" class="headrg">Registration Failed! <br> Error: '
                       <h4>
                       <?php echo $rows['nume']; ?> <?php echo $rows['prenume'];?>
                       </h4>
-                      <p class="text-secondary mb-1">Clasa 
-                    
-                      
+                      <p class="text-secondary mb-1">Clasa                     
                       <?php echo $rows['clasa'];?>
-
-
-</p>
-
+                      </p>
                       <button class="btn btn-primary">Editeaza informatiile</button>
                     </div>
                   </div>

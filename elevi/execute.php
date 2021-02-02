@@ -10,11 +10,11 @@ if ($num_rows) {
  $nume=$_POST['nume'];
  $prenume=$_POST['prenume'];
  $email=$_POST['email'];
- $email_parinte=$_POST['email_parinte'];
+
  $parola=$_POST['parola'];
  $clasa=$_POST['clasa'];
- $telefon_parinte=$_POST['telefon_parinte'];
- if(mysqli_query($con,"INSERT INTO elevi(nume, prenume, email_parinte,email, parola, clasa,  telefon_parinte)VALUES('$nume', '$prenume','$email_parinte', '$email', '$parola', '$clasa', '$telefon_parinte')")){ 
+
+ if(mysqli_query($con,"INSERT INTO elevi(nume, prenume, parola, clasa)VALUES('$nume', '$prenume', '$email', '$parola', '$clasa')")){ 
  header("location: elev.php?remarks=success");
  }else{
   $e=mysqli_error($con);
