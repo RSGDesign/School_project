@@ -120,31 +120,10 @@ echo ' <div id="reg-head-fail" class="headrg">Registration Failed! <br> Error: '
                       <?php echo $rows['nume']; ?> <?php echo $rows['prenume'];?>
                       </h4>
                       <p class="text-secondary mb-1">Clasa 
-                      <?php 
-}
-?>
+                    
                       
-                      <?php
-      $sql="SELECT * FROM clase where id=$clasa";
-      $result=mysqli_query($con,$sql);
+                      <?php echo $rows['clasa'];?>
 
-    ?>
-    <?php
-while($rows=mysqli_fetch_array($result)){
-  echo $rows['clasa'];
-// close while loop 
-}
-?>
-  <?php
-      $sql="SELECT * FROM elevi where id=$loggedin_id";
-      $result=mysqli_query($con,$sql);
-      
-  
-    ?>
-    <?php
-while($rows=mysqli_fetch_array($result)){
-  $clasa=$rows['clasa'];
-?>
 
 </p>
 
@@ -189,25 +168,8 @@ while($rows=mysqli_fetch_array($result)){
                     <?php echo $rows['email']; ?>
                     </div>
                   </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">email parinte</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php echo $rows['email_parinte']; ?>
-                    </div>
-                  </div>
                   
-				  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Telefon parinte</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php echo $rows['telefon_parinte']; ?>
-                    </div>
-                  </div>
+                  
                   
                 </div>
               </div>
