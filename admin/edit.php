@@ -5,14 +5,19 @@
 <!doctype html>
 <html lang="en">
   <head>
+      
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="js/bootstrap.bundle.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>administrator</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>  
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+ 
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
+    <title>Adauga Admin</title>
 
     <?php
       $sql="SELECT * FROM admin where id=$loggedin_id";
@@ -26,7 +31,7 @@ while($rows=mysqli_fetch_array($result)){
 
 
     <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -45,8 +50,8 @@ while($rows=mysqli_fetch_array($result)){
       }
     </style>
     <!-- Custom styles for this template -->
-   <link href="signup.css" rel="stylesheet">
-	<link href="navbar.css" rel="stylesheet">
+   <link href="../signup.css" rel="stylesheet">
+	<link href="../navbar.css" rel="stylesheet">
   </head>
   <body class="text-center">
   <div>
@@ -100,14 +105,20 @@ while($rows=mysqli_fetch_array($result)){
                       <?php echo $rows['nume']; ?> <?php echo $rows['prenume'];?>
                       </h4>
                       <p class="text mb-1">Administator</p>
-                      <a  href="edit.php"><button class="btn btn-primary">Editeaza informatiile</button></a>
+                      <button class="btn btn-primary">Editeaza informatiile</button>
                     </div>
                   </div>
                 </div>
               </div>
+              <?php
+}
+?>
               <div class="card mt-3">
-              <ul class="list-group list-group-flush">
-                  <li class="list-group-item d-flex justify-content-between align-items-center ">
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center ">
+                    <a class="link" href="admin.php"><b>Dashboard</b></a>
+                  </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center ">
                     <a class="link" href="add_profesor.php"><b>Adauga profesor</b></a>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
@@ -133,70 +144,94 @@ while($rows=mysqli_fetch_array($result)){
               </div>
             </div>
             <div class="col-md-8">
-              <div class="card mb-3">
+            <div class="card mb-3">
                 <div class="card-body">
                   
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">email</h6>
+                    <div class="row">
+                    <div class="col-md-12">
+                      <h4 class="mb-0">Editeaza informatiile</h4>
+                      <br>
+                      <form method="post"  action="edit_admin_nume.php">
+                            <input type="text" class="form-control"  placeholder="Editeaza nume" name="nume" value="" >
+                            <br>
+                            
+                            
+                           
+                            <div class="form-group">
+                            <input type="submit" class="btn btn-primary" name="submit" value="Submit" />
+                            </div>
+                        </form>
+                        <form method="post"  action="edit_admin_prenume.php">
+                         
+                            <input type="text" class="form-control" placeholder="Editeaza prenume" name="prenume" value="">
+                            <br>
+                            
+                            
+                           
+                            <div class="form-group">
+                            <input type="submit" class="btn btn-primary" name="submit" value="Submit" />
+                            </div>
+                        </form>
+                        <form method="post"  action="edit_admin_email.php">
+                            
+                            <input type="email" class="form-control" placeholder=" Editeaza email" name="email" value="">
+                            <br>
+                           
+                           
+                            
+                            
+                           
+                            <div class="form-group">
+                            <input type="submit" class="btn btn-primary" name="submit" value="Submit" />
+                            </div>
+                        </form> <form method="post"  action="edit_admin_parola.php">
+                            
+                           
+                            <input type="password" class="form-control" id="parola"placeholder="Editeaza parola" name="parola" value=""
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Trebuie sa contina cel putin 8 caractere, un  caracter special si o litera majuscula" >
+                            
+                            <br>
+                            
+                           
+                            <div class="form-group">
+                            <input type="submit" class="btn btn-primary" name="submit" value="Submit" />
+                            </div>
+                        </form>
+                        
                     </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php echo $rows['email']; ?> 
                     </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Telefon</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php echo $rows['telefon']; ?> 
-                  </div>
-                  <hr>
-                  
                 </div>
-    </div>
+            </div>     
+    
               </div>
-              <div class="row gutters-sm">
-                <div class="col-sm-6 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      de adaugat un widget cu adaugare de teme de terminat pana pe data de 
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      de adaugat un widget/mai multe cu adaugare de note/teste/viitoare ascultari/anunturi
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+             
+
           </div>
         </div>
     </div>
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-	
-</script>
-<?php
+
+
+   
+    <?php
+   if(isset($_GET['info']) && $_GET['info'] == 'contcreat'){
+
+
+  echo'<script>  alert("Good job, un nou admin s-a alaturat")</script>'; 
+
 }
 ?>
+    <?php
+   if(isset($_GET['info']) && $_GET['info'] == 'existent'){
+
+
+  echo'<script>  alert("Acest email corespunde altui admin!")</script>'; 
+
+}
+?>
+
 
 
 </body>
 
 </html>
+
