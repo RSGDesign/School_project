@@ -189,26 +189,7 @@ while($rows=mysqli_fetch_array($result)){
                     <?php echo $rows['email']; ?>
                     </div>
                   </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">email parinte</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php echo $rows['email_parinte']; ?>
-                    </div>
-                  </div>
-                  
-				  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Telefon parinte</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php echo $rows['telefon_parinte']; ?>
-                    </div>
-                  </div>
-                  
+                 
                 </div>
               </div>
               <?php 
