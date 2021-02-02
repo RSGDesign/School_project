@@ -100,7 +100,15 @@ echo ' <div id="reg-head-fail" class="headrg">Registration Failed! <br> Error: '
                 </div>
 
             </div>
+            <?php
+            if(isset($_GET['info']) && $_GET['info'] == 'emailschimbat'){
 
+
+echo'<script>  alert("Email schimbat cu succes")</script>'; 
+
+
+}
+?>
 </body>
 
 
