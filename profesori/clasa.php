@@ -92,7 +92,7 @@ while($rows=mysqli_fetch_array($result)){
 <div class="container" style="max-width:1800px">
     <div class="main-body" style="padding-top:20px">
     
-          <div class="row ">
+          <div class="row gutters-sm ">
             <div class="col-md-3 mb-3">
               <div class="card">
                 <div class="card-body">
@@ -137,16 +137,23 @@ while($rows=mysqli_fetch_array($result)){
             </div>
             <div class="col-md-8">
               
-              <div class="row gutters-sm">
+              <div class="row gutters-sm ">
                 <div class="col-sm-6 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      de adaugat un widget cu adaugare de teme de terminat pana pe data de 
+                  <div class="card h-100 ">
+                    <div class="card-body ">
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">CLASA</i>IX-RD</h6>
+                      <div class=" ">
+                    <div class="text-center" style="padding-bottom:10px">
+               Optiuni
+                  </div>
+                
+                  </div>
+                      <button class="btn btn-primary" style="margin-top:5px">Lectii</button>
+                      <button class="btn btn-primary" style="margin-top:5px">Teme</button>
+                      <button class="btn btn-primary" style="margin-top:5px">Note</button>
+                      <button class="btn btn-primary" style="margin-top:5px">Prezenta</button>
+                      <button class="btn btn-primary" style="margin-top:5px">Teste</button>
+                      <button class="btn btn-primary" style="margin-top:5px">Meet</button>
                     </div>
                   </div>
                 </div>
