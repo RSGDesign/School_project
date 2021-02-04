@@ -29,7 +29,7 @@ while($rows=mysqli_fetch_array($result)){
 ?>
 
     <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+
 
     <style>
       .bd-placeholder-img {
@@ -89,11 +89,11 @@ while($rows=mysqli_fetch_array($result)){
     </form>
     </div>
 </div>
-<div class="container">
+<div class="container" style="max-width:1800px">
     <div class="main-body" style="padding-top:20px">
     
-          <div class="row gutters-sm">
-            <div class="col-md-4 mb-3">
+          <div class="row ">
+            <div class="col-md-3 mb-3">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
