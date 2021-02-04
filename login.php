@@ -1,12 +1,7 @@
-
-
 <?php
-
-
 include('db.php');
 session_start();
 if(isset($_SESSION['email'])  )
-
 {
 $sql="SELECT email FROM elevi WHERE email='" . $_SESSION['email'] . "' ";
 $result=mysqli_query($con,$sql);
@@ -17,24 +12,17 @@ $result1=mysqli_query($con,$sql1);
 $row1=mysqli_fetch_array($result1);
 $count1=mysqli_num_rows($result1);
 if($count == 1) {
- 
  header("Location:elevi/elev.php");
 }else if($count1 == 1){
-    
     header("Location:profesori/profesor.php");
 }
-
 }
 
-
-
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Logheaza-te</title>
