@@ -114,87 +114,68 @@ while($rows=mysqli_fetch_array($result)){
               </div>
               <div class="card mt-3">
                 <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex justify-content-between align-items-center ">
-                <a class="link" href="lectii.html"><b>Lectii</b></a>   <i class="material-icons text-info mr-2">assignment</i> 
+                  <li class="list-group-item d-flex justify-content-between align-items-center ">
+                    <a class="link" href="lectii.html"><b>Lectii</b></a>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <a class="link" href="teme.html"><b>Teme</b></a>   <i class="material-icons text-info mr-2">assignment</i> 
+                    <a class="link" href="teme.html"><b>Teme</b></a>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <a class="link" href="https://cnsmro.edupage.org/timetable/?"><b>Orar</b></a>   <i class="material-icons text-info mr-2">assignment</i> 
+                    <a class="link" href="https://cnsmro.edupage.org/timetable/?"><b>Orar</b></a>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <a class="link" href="note.html"><b>Note</b></a>   <i class="material-icons text-info mr-2">assignment</i> 
+                    <a class="link" href="note.html"><b>Note</b></a>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-					<a class="link" href="prezenta.html"><b>Prezenta</b></a>   <i class="material-icons text-info mr-2">assignment</i> 
+					<a class="link" href="prezenta.html"><b>Prezenta</b></a>
                   </li>
 				  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-					<a class="link" href="ora.html"><b>Ore online</b></a>   <i class="material-icons text-info mr-2">assignment</i> 
+					<a class="link" href="ora.html"><b>Ore online</b></a>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="col-md-8">
+            <div class="card mb-3">
+                <div class="card-body">
+                 
+                  
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0"><Label>Selecteaza clasa </Label></h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <select Emp Name='clasa' class="form-control"required>  
+                                        <option value="">Clasa</option>  
+                                        <?php  
+                                          
+                                            include('../db.php');
+
+                                            $select="lectie";
+                                        ?>  
+                                        <?php  
+                                            $list=mysqli_query($con,"select * from clase order by id asc");  
+                                        while($row_list=mysqli_fetch_assoc($list)){  
+                                            ?>  
+                                                <option value="<?php echo $row_list['clasa']; ?>"<?php if($row_list['clasa']==$select){ echo "selected"; } ?> >  
+                                                                    <?php echo $row_list['clasa'];?>  
+                                                </option>  
+                                            <?php  
+                                            }  
+                                            ?>  
+                                        </select>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                </div>
               
-              <div class="row gutters-sm">
-              <div class="col-sm-6 mb-3">
-                  <div class="card h-100 ">
-                    <div class="card-body ">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">CLASA</i>IX-RD</h6>
-                      <div class=" ">
-                    <div class="text-center" style="padding-bottom:10px">
-               Optiuni
-                  </div>
-                  <form method="post"  id="framework_form">
-                  </div> 
-                                        
-                      <button id="lectie" class="btn btn-primary" style="margin-top:5px; width:170px;">Selecteaza Lectia</button>
-                     </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      de adaugat un widget/mai multe cu adaugare de note/teste/viitoare ascultari/anunturi
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      de adaugat un widget/mai multe cu adaugare de note/teste/viitoare ascultari/anunturi
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      de adaugat un widget/mai multe cu adaugare de note/teste/viitoare ascultari/anunturi
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
     </div>
+    
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
@@ -204,37 +185,7 @@ while($rows=mysqli_fetch_array($result)){
 <?php
 }
 ?>
-<script>
-$(document).ready(function(){
- $('#clasa').multiselect({
-  
-  nonSelectedText: 'Selecteaza clasa',
-  enableFiltering: true,
-  enableCaseInsensitiveFiltering: true,
-  buttonWidth:'400px'
- });
- 
- $('#framework_form').on('submit', function(event){
-  event.preventDefault();
-  var form_data = $(this).serialize();
-  $.ajax({
-   url:"insert_elev.php",
-   method:"POST",
-   data:form_data,
-   success:function(data)
-   {
-    $('#clasa option:selected').each(function(){
-     $(this).prop('selected', false);
-    });
-    $('#clasa').multiselect('refresh');
-    alert(data);
-   }
-  });
- });
- 
- 
-});
-</script>
+
 </body>
 
 </html>
