@@ -138,41 +138,46 @@ while($rows=mysqli_fetch_array($result)){
             <div class="col-md-8">
            
               <div class="row gutters-sm">
-              <?php  
-                                          
-                                          include('../db.php');
-                                          $select="clase";
-                                      ?>  
-                                      <?php  
-                                          $list=mysqli_query($con,"SELECT clasa( (SELECT ',' + RTRIM(clasa)
-                                          FROM tableName
-                           WHERE id = '$loggedin_id'
-                           
-                           FOR XML PATH('')
-                      ),1,1,'') AS 'StringData'");  
-                                      while($row_list=mysqli_fetch_assoc($list)){  
-                                          ?>  
-                                               
-                                              <div class="col-sm-6 mb-3">
-                                                  <div class="card h-100 ">
-                                                    <div class="card-body ">
-                                                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">CLASA</i><?php echo $row_list['clasa']; ?></h6>
-                                                      <div class=" ">
-                                                    <div class="text-center" style="padding-bottom:10px">
-                                              Optiuni
-                                                  </div>
-                                                 
-                                                  </div> 
-                                                                        
-                                                      
-                                                    </div>
-                                                  </div>
-                                                </div> 
+              <?php
+                                                           
+include('../db.php');
+                                                            $sql = "SELECT clasa FROM profesori ";
+                                                            $result = $con->query($sql);
+                                                            if ($result->num_rows > 0 ) {
+                                                                   ?> 
+                                                            <?php
+                                                            while($row = $result->fetch_assoc()) {
+                                                             
+                                                              ?>
+                                                                <div class="col-sm-6 mb-3">
+                                                                <div class="card h-100 ">
+                                                                  <div class="card-body ">
+                                                                    <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Clasa</i><?php echo $row["clasa"];?></h6>
+                                                                    <div class=" ">
+                                                                  <div class="text-center" style="padding-bottom:10px">
+                                                             Optiuni
+                                                                </div>
+                                                                <form method="post"  id="framework_form">
+                                                                </div> 
+                                                                                      
+                                                                    <button id="lectie" class="btn btn-primary" style="margin-top:5px; width:170px;">Selecteaza Lectia</button>
+                                                                   </form>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                          <?php
+                                                            }}
+                                                          else{
+                                                            echo"Nu aveti selectata nici o clasa";
+                                                          }
+                                                            ?>
                                                           
+                                                            
+
+                                                           
+                                 
                                                
-                                          <?php  
-                                          }  
-                                          ?>  
+                                         
               <div class="col-sm-6 mb-3">
                   <div class="card h-100 ">
                     <div class="card-body ">
