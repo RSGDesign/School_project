@@ -136,8 +136,43 @@ while($rows=mysqli_fetch_array($result)){
               </div>
             </div>
             <div class="col-md-8">
-              
+           
               <div class="row gutters-sm">
+              <?php  
+                                          
+                                          include('../db.php');
+                                          $select="clase";
+                                      ?>  
+                                      <?php  
+                                          $list=mysqli_query($con,"SELECT clasa( (SELECT ',' + RTRIM(clasa)
+                                          FROM tableName
+                           WHERE id = '$loggedin_id'
+                           
+                           FOR XML PATH('')
+                      ),1,1,'') AS 'StringData'");  
+                                      while($row_list=mysqli_fetch_assoc($list)){  
+                                          ?>  
+                                               
+                                              <div class="col-sm-6 mb-3">
+                                                  <div class="card h-100 ">
+                                                    <div class="card-body ">
+                                                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">CLASA</i><?php echo $row_list['clasa']; ?></h6>
+                                                      <div class=" ">
+                                                    <div class="text-center" style="padding-bottom:10px">
+                                              Optiuni
+                                                  </div>
+                                                 
+                                                  </div> 
+                                                                        
+                                                      
+                                                    </div>
+                                                  </div>
+                                                </div> 
+                                                          
+                                               
+                                          <?php  
+                                          }  
+                                          ?>  
               <div class="col-sm-6 mb-3">
                   <div class="card h-100 ">
                     <div class="card-body ">
