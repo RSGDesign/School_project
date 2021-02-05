@@ -143,16 +143,21 @@ while($rows=mysqli_fetch_array($result)){
 include('../db.php');
                                                             $sql = "SELECT clasa FROM profesori ";
                                                             $result = $con->query($sql);
+                                                            
+                                                            
                                                             if ($result->num_rows > 0 ) {
                                                                    ?> 
                                                             <?php
+
                                                             while($row = $result->fetch_assoc()) {
-                                                             
+                                                              $clase=$row["clasa"];}
+                                                              $clasa=explode(",", $clase);
+                                                              foreach($clasa as $clasafinala){
                                                               ?>
                                                                 <div class="col-sm-6 mb-3">
                                                                 <div class="card h-100 ">
                                                                   <div class="card-body ">
-                                                                    <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Clasa</i><?php echo $row["clasa"];?></h6>
+                                                                    <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Clasa</i><?php echo $clasafinala;?></h6>
                                                                     <div class=" ">
                                                                   <div class="text-center" style="padding-bottom:10px">
                                                              Optiuni
