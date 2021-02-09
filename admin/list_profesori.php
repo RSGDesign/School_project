@@ -162,7 +162,7 @@ while($rows=mysqli_fetch_array($result)){
                                          echo "<td>"; echo $row_list['prenume'];  echo "</td>";
                                          echo "<td>"; echo $row_list['email'];  echo "</td>";
                                          echo "<td>"; echo $row_list['materie'];  echo "</td>";
-                                         echo "<td>"; ?><a href="delete.php?nume=<?php echo $row_list['nume']; ?>"><i style="color:#007bff;"class="fa fa-close"></i></a><?php  echo "</td>";                       
+                                         echo "<td>"; ?><a href="delete_profesor.php?nume=<?php echo $row_list['nume']; ?>"><i style="color:#007bff;"class="fa fa-close"></i></a><?php  echo "</td>";                       
                                          echo" </tr>";   
                                            
                                           }  

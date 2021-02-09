@@ -4,12 +4,12 @@ include("../db.php");
 
 $nume = $_GET['nume']; // get id through query string
 
-$del = mysqli_query($con,"delete from elevi where nume = '$nume'"); // delete query
+$del = mysqli_query($con,"delete from profesori where nume = '$nume'"); // delete query
 
 if($del)
 {
     mysqli_close($con); // Close connection
-    header("location:list_elevi.php"); // redirects to all records page
+    header("location:list_profesori.php"); // redirects to all records page
     exit;	
 }
 else
