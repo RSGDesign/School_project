@@ -100,6 +100,8 @@ while($rows=mysqli_fetch_array($result)){
                       <?php echo $rows['nume']; ?> <?php echo $rows['prenume'];?>
                       </h4>
                       <p class="text mb-1">Administator</p>
+                      <p class="text mb-1">Email</p>
+                      <p class="text-muted font-size-sm"><?php echo $rows['email']; ?></p>
                       <a  href="edit.php"><button class="btn btn-primary">Editeaza informatiile</button></a>
                     </div>
                   </div>
@@ -133,30 +135,7 @@ while($rows=mysqli_fetch_array($result)){
               </div>
             </div>
             <div class="col-md-8">
-              <div class="card mb-3">
-                <div class="card-body">
-                  
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">email</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php echo $rows['email']; ?> 
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Telefon</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <?php echo $rows['telefon']; ?> 
-                  </div>
-                  <hr>
-                  
-                </div>
-    </div>
-              </div>
+             
               <div class="row gutters-sm">
                 <div class="col-sm-6 mb-3">
                   <div class="card h-100">
