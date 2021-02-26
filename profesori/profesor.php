@@ -165,7 +165,7 @@ include('../db.php');
                                                                 <form method="post"  id="framework_form">
                                                                 </div> 
                                                                                       
-                                                                    <button id="lectie" class="btn btn-primary" style="margin-top:5px; width:170px;">Selecteaza Lectia</button>
+                                                                    <button id="lectie" class="btn btn-primary" style="margin-top:5px; width:170px;">Deschide clasa</button>
                                                                    </form>
                                                                   </div>
                                                                 </div>
